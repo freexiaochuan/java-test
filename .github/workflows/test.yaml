@@ -39,6 +39,9 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
           curl -O https://unpkg.com/@xiaochuan-dev/java-test-script@0.0.2/index.js
+
+          cat package.json
+
           node index.js > package.json
 
           cat package.json
