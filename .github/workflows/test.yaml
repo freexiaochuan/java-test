@@ -40,9 +40,7 @@ jobs:
 
           curl -O https://unpkg.com/@xiaochuan-dev/java-test-script@0.0.2/index.js
 
-          cat package.json
-
-          node index.js > package.json
+          node ./index.js > package.json
 
           cat package.json
 
