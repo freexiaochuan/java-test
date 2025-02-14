@@ -23,3 +23,17 @@ jobs:
 
       - name: test
         run: ./gradlew test
+      
+      - name: publish report 
+        run: |
+          cd app/build/reports/tests/test
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+          echo '{
+            "name": "@xiaochuan-dev/java-test",
+            "version": "0.0.1",
+            "publishConfig": {
+              "access": "public",
+              "registry": "https://registry.npmjs.org/"
+            }
+          }' > package.json
+          npm publish
