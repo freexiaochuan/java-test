@@ -14,7 +14,9 @@ public class ListTest {
         int[] a1 = l1.stream().mapToInt(Integer::intValue).toArray();
         List<Integer> l2 = Arrays.stream(a1).boxed().toList();
 
-        assertEquals(l1, l2);
+        int[] a2 = l2.stream().mapToInt(Integer::intValue).toArray();
 
+        assertEquals(l1, l2);
+        assertArrayEquals(a1, a2);
     }
 }

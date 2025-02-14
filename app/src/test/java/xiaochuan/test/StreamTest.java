@@ -21,4 +21,19 @@ public class StreamTest {
         assertEquals(l1, Arrays.asList(6, 6));
 
     }
+
+    @Test
+    public void t2() {
+
+        String[] a1 = new String[]{"person", "monkey"};
+
+
+        List<Integer> l1 = Arrays.stream(a1)
+                            .map(s -> s.length())
+                            .collect(Collectors.toList());
+
+
+        assertEquals(l1, Arrays.asList(6, 6));
+
+    }
 }
