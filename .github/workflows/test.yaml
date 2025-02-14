@@ -38,7 +38,9 @@ jobs:
           cd app/build/reports/tests/test
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
-          curl -O https://unpkg.com/@xiaochuan-dev/java-test-script@0.0.1/index.js
+          curl -O https://unpkg.com/@xiaochuan-dev/java-test-script@0.0.2/index.js
           node index.js > package.json
+
+          cat package.json
 
           npm publish
