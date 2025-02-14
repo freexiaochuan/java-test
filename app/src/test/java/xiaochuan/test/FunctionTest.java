@@ -3,6 +3,7 @@ package xiaochuan.test;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -29,4 +30,12 @@ public class FunctionTest {
         Runnable f = () -> System.out.println("hello world");
         f.run();
     }
+
+    @Test
+    public void t4() {
+        Consumer<String> f = s -> System.out.println(s);
+
+        f.accept("Consumer");
+    }
+
 }
